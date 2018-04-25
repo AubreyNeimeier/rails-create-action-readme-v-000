@@ -18,6 +18,6 @@ class PostsController < ApplicationController
 	  @post.description = params[:description]
 	  @post.save
 		#can check in console with Post.last
-		redirect to post_path
+		redirect to post_path(@post)
 	end
 end
