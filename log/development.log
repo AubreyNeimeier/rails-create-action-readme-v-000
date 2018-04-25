@@ -226,3 +226,13 @@ Did you mean?  to_s
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (58.7ms)
+
+
+Started POST "/posts" for 65.189.251.179 at 2018-04-25 17:29:55 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JvK3jrCNb4UOOyBI/Ls1UZpQ6wnr/x5RN8CJhCcfYNv6+Soz6W6pmzcUcnrzH+AbdkIV5HkG0SuJPFV3QfUZNA==", "title"=>"Hamburgers", "description"=>"Hotdogs", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Hamburgers"], ["description", "Hotdogs"], ["created_at", "2018-04-25 17:29:55.749793"], ["updated_at", "2018-04-25 17:29:55.749793"]]
+  [1m[35m (3.1ms)[0m  commit transaction
+Redirected to http://192.241.157.192:36750/posts/4
+Completed 302 Found in 19ms (ActiveRecord: 5.0ms)
