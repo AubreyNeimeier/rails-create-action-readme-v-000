@@ -18,7 +18,7 @@ class PostsController < ApplicationController
 	  @post.description = params[:description]
 	  @post.save
 		#can check in console with Post.last
-		redirect to post_path(@post)
+		redirect_to post_path(@post)
 		#redirect to show page
 	end
 end
