@@ -12,6 +12,7 @@ class PostsController < ApplicationController
 	end
 
 	def create
+		#communicate w/ database and redirect
 		post = Post.new
 	  post.title = params[:title]
 	  post.description = params[:description]
