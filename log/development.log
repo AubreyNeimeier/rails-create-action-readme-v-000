@@ -182,3 +182,43 @@ ActionView::MissingTemplate (Missing template posts/create, application/create w
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (34.2ms)
   [1m[36mPost Load (0.4ms)[0m  [1mSELECT  "posts".* FROM "posts"  ORDER BY "posts"."id" DESC LIMIT 1[0m
+
+
+Started GET "/posts/ne" for 65.189.251.179 at 2018-04-25 17:29:23 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"ne"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 27ms (ActiveRecord: 0.8ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=ne):
+  app/controllers/posts_controller.rb:7:in `show'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.8ms)
+
+
+Started GET "/posts/new" for 65.189.251.179 at 2018-04-25 17:29:26 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 339ms (Views: 332.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 65.189.251.179 at 2018-04-25 17:29:41 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JvK3jrCNb4UOOyBI/Ls1UZpQ6wnr/x5RN8CJhCcfYNv6+Soz6W6pmzcUcnrzH+AbdkIV5HkG0SuJPFV3QfUZNA==", "title"=>"Hamburgers", "description"=>"Hotdogs", "commit"=>"Submit Post"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Hamburgers"], ["description", "Hotdogs"], ["created_at", "2018-04-25 17:29:41.674782"], ["updated_at", "2018-04-25 17:29:41.674782"]]
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 3.7ms)
+
+NoMethodError (undefined method `to' for #<PostsController:0x007f5385f35c98>
+Did you mean?  to_s
+               to_a
+               t):
+  app/controllers/posts_controller.rb:21:in `create'
+
+
