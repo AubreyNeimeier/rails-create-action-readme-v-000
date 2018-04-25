@@ -19,5 +19,6 @@ class PostsController < ApplicationController
 	  @post.save
 		#can check in console with Post.last
 		redirect to post_path(@post)
+		#redirect to show page
 	end
 end
